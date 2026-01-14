@@ -1,0 +1,36 @@
+# AL Development
+.alpackages/
+.alcache/
+*.app
+*.g.xlf
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Node
+node_modules/
+npm-debug.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Build outputs
+bin/
+obj/
+
+# Test results
+TestResults/
+
+# IDE
+*.suo
+*.user
+.idea/
