@@ -13,19 +13,24 @@
 
 ## 📋 Descripción
 
-Este workshop te guía paso a paso para construir **dos extensiones completas** de Business Central usando técnicas de desarrollo asistido por IA:
+Este workshop te guía paso a paso para construir **tres extensiones completas** de Business Central usando técnicas de desarrollo asistido por IA:
 
-| Ejercicio | Descripción | Complejidad | Tiempo |
-|-----------|-------------|-------------|--------|
-| **🎫 Gestión de Incidencias** | Sistema de tickets con API para agentes | 🟡 Media | 2-3 horas |
-| **📋 Registros de Eventos** | Importación de Eventbrite con API de consulta | 🟢 Media-Baja | 1-2 horas |
+| Ejercicio | Descripción | Complejidad | Tiempo con IA |
+|-----------|-------------|-------------|---------------|
+| **💼 Control de Equipamiento** | Préstamo de laptops, proyectores (demo rápida) | 🟢 Baja | 25 min ⚡ |
+| **📋 Registros de Eventos** | Importación de Eventbrite con API de consulta | 🟢 Media-Baja | 35 min ⚡ |
+| **🎫 Gestión de Incidencias** | Sistema de tickets con API para agentes | 🟡 Media | 50 min ⚡ |
+
+> ⚡ **Tiempos con ALDC + GitHub Copilot**: La IA genera todo el código. Tú diseñas y pruebas.
 
 **Lo que aprenderás:**
-- ✅ Diseño arquitectónico con `al-architect`
-- ✅ Implementación TDD con `al-conductor`
-- ✅ Creación de APIs para agentes externos
-- ✅ Importación de datos desde Excel
-- ✅ Mejores prácticas de desarrollo AL
+- ✅ Diseñar con `al-architect` - La IA crea la arquitectura
+- ✅ Implementar con `al-conductor` - TDD automático, 0 líneas manuales
+- ✅ Crear APIs para agentes - Generadas con best practices
+- ✅ Importar datos desde Excel - Código de mapeo automático
+- ✅ Aplicar mejores prácticas AL - Auto-guidelines en segundo plano
+
+> 💡 **Lo que antes tomaba 2 días, ahora toma 1 hora**
 
 ---
 
@@ -98,7 +103,7 @@ workshop-bc-ai-development/
 ├── README.md                          # Este archivo
 ├── LICENSE
 │
-├── ejercicio-01-incidencias/          # 🎫 Sistema de Incidencias
+├── ejercicio-01-equipamiento/         # 💼 Control de Equipamiento (WARM-UP)
 │   ├── README.md                      # Guía del ejercicio
 │   ├── PRD-ejecutivo.md              # Requisitos de negocio
 │   ├── PRD-tecnico.md                # Especificaciones técnicas
@@ -111,6 +116,13 @@ workshop-bc-ai-development/
 │   ├── PRD-tecnico.md                # Especificaciones técnicas
 │   ├── datos-ejemplo/                # Excel de ejemplo
 │   │   └── eventbrite-export.xlsx
+│   └── solucion/                     # Código de referencia
+│       └── ...
+│
+├── ejercicio-03-incidencias/          # 🎫 Sistema de Incidencias (AVANZADO)
+│   ├── README.md                      # Guía del ejercicio
+│   ├── PRD-ejecutivo.md              # Requisitos de negocio
+│   ├── PRD-tecnico.md                # Especificaciones técnicas
 │   └── solucion/                     # Código de referencia
 │       └── ...
 │
@@ -128,30 +140,49 @@ workshop-bc-ai-development/
 
 ## 🚀 Flujo del Workshop
 
-### Parte 1: Introducción (30 min)
-- Qué es el desarrollo AI-native
-- Introducción a AL Development Collection
-- Los 3 niveles de complejidad
-- Demo rápida de al-architect + al-conductor
+### 🎯 Modalidad Express (1 hora) - Recomendado para demos
 
-### Parte 2: Ejercicio 1 - Incidencias (2-3 horas)
-1. Análisis del PRD ejecutivo
-2. Diseño con `al-architect`
-3. Implementación con `al-conductor`
-4. Pruebas de la API
-5. Revisión y Q&A
+```
+00:00-00:10 → Intro: "La IA genera el código, tú diseñas"
+00:10-00:35 → Ejercicio 1: Control de Equipamiento (completo)
+00:35-00:55 → Ejercicio 2: Registros de Eventos (completo)  
+00:55-01:00 → Conclusiones y próximos pasos
 
-### Parte 3: Ejercicio 2 - Eventos (1-2 horas)
-1. Análisis del PRD y datos de ejemplo
-2. Diseño con `al-architect`
-3. Implementación con `al-conductor`
-4. Pruebas de importación y API
-5. Revisión y Q&A
+RESULTADO: ✅ DOS sistemas funcionando, ~50 objetos AL generados
+```
 
-### Parte 4: Cierre (30 min)
-- Mejores prácticas aprendidas
-- Recursos adicionales
-- Próximos pasos
+### 📚 Modalidad Completa (2-3 horas) - Workshop profundo
+
+**Parte 1: Introducción (15 min)**
+- Desarrollo AI-native vs tradicional
+- AL Development Collection: 7 agentes + Orchestra
+- Demo: al-architect → al-conductor (en vivo)
+
+**Parte 2: Ejercicio 1 - Equipamiento (25 min)**
+1. Leer PRD ejecutivo (5 min)
+2. `al-architect` genera diseño (6 min)
+3. `al-conductor` implementa con TDD (12 min)
+4. Probar funcionalidad (2 min)
+
+**Parte 3: Ejercicio 2 - Eventos (35 min)**
+1. Análisis del PRD y datos ejemplo (3 min)
+2. `al-architect` diseña importación (6 min)
+3. `al-conductor` implementa completo (18 min)
+4. Importar Excel + probar API (8 min)
+
+**Parte 4: Ejercicio 3 - Incidencias (50 min)**
+1. PRD ejecutivo - sistema complejo (3 min)
+2. `al-architect` arquitectura completa (8 min)
+3. `al-conductor` orquesta 8 fases (30 min)
+   - Ver TDD en acción: RED → GREEN → REFACTOR
+   - Observar review automático por al-review-subagent
+4. Probar APIs REST (5 min)
+5. Revisar documentación en `.github/plans/` (4 min)
+
+**Parte 5: Cierre (20 min)**
+- Comparativa: Manual vs ALDC (8h → 2h)
+- Mejores prácticas aplicadas automáticamente
+- Recursos y próximos pasos
 
 ---
 
@@ -159,15 +190,21 @@ workshop-bc-ai-development/
 
 ### Si quieres empezar ya:
 
-**Ejercicio 1 - Incidencias:**
+**Ejercicio 1 - Equipamiento:**
 ```bash
-cd ejercicio-01-incidencias
+cd ejercicio-01-equipamiento
 # Lee el README.md y sigue los pasos
 ```
 
 **Ejercicio 2 - Eventos:**
 ```bash
 cd ejercicio-02-eventos
+# Lee el README.md y sigue los pasos
+```
+
+**Ejercicio 3 - Incidencias:**
+```bash
+cd ejercicio-03-incidencias
 # Lee el README.md y sigue los pasos
 ```
 
@@ -188,16 +225,20 @@ cd ejercicio-02-eventos
 
 ## 🎯 Resultados Esperados
 
-Al completar ambos ejercicios habrás creado:
+Al completar los tres ejercicios habrás creado:
 
-| Métrica | Ejercicio 1 | Ejercicio 2 | Total |
-|---------|-------------|-------------|-------|
-| **Tablas** | 3 | 2 | 5 |
-| **Pages** | 6 | 5 | 11 |
-| **APIs** | 3 | 2 | 5 |
-| **Codeunits** | 2 | 1 | 3 |
-| **Tests** | ~40 | ~25 | ~65 |
-| **Tiempo** | 2-3h | 1-2h | 3-5h |
+| Métrica | Ej. 1 (Equip.) | Ej. 2 (Eventos) | Ej. 3 (Incid.) | **Total** |
+|---------|:--------------:|:---------------:|:--------------:|:---------:|
+| **Tablas** | 2 | 2 | 3 | **7** |
+| **Enums** | 1 | 0 | 3 | **4** |
+| **Pages** | 4 | 5 | 6 | **15** |
+| **APIs** | 0 | 2 | 3 | **5** |
+| **Codeunits** | 1 | 1 | 2 | **4** |
+| **Tests** | ~20 | ~25 | ~40 | **~85** |
+| **Tiempo con IA** | 25 min ⚡ | 35 min ⚡ | 50 min ⚡ | **110 min** |
+| **Tiempo manual** | 3-4h 🐌 | 4-6h 🐌 | 8-10h 🐌 | **15-20h** |
+
+> 🚀 **Productividad**: ~10x más rápido con ALDC + GitHub Copilot
 
 ---
 
@@ -238,4 +279,4 @@ Este workshop está bajo licencia MIT. Puedes usarlo, modificarlo y distribuirlo
 
 **¡Empezamos! 🚀**
 
-👉 [Ir al Ejercicio 1: Gestión de Incidencias](./ejercicio-01-incidencias/README.md)
+👉 [Ir al Ejercicio 1: Control de Equipamiento](./ejercicio-01-equipamiento/README.md)

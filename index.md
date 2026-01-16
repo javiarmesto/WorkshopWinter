@@ -27,25 +27,25 @@ permalink: /
 
 ## 🎯 ¿Qué Aprenderás?
 
-Este workshop te guía paso a paso para construir **dos extensiones completas** de Business Central usando técnicas de desarrollo asistido por IA:
+Este workshop te guía paso a paso para construir **tres extensiones completas** de Business Central usando técnicas de desarrollo asistido por IA:
 
 <div class="code-example" markdown="1">
 
-### 🎫 Ejercicio 1: Gestión de Incidencias
-**Complejidad:** 🟡 Media | **Tiempo:** 2-3 horas
+### 💼 Ejercicio 1: Control de Equipamiento
+**Complejidad:** 🟢 Baja | **Tiempo:** 25 minutos
 
-Sistema completo de tickets con API REST para agentes externos. Incluye:
-- Gestión de ciclo de vida (Nueva → En Progreso → Resuelta → Cerrada)
-- Categorización y priorización
-- Historial de comentarios automático
-- API para integración con chatbots y sistemas externos
+Sistema simple de préstamo de equipamiento IT (laptops, proyectores). Incluye:
+- Catálogo de equipos con estados (Disponible, Prestado, En Reparación, Retirado)
+- Registro de préstamos con fechas y prestatario
+- Detección automática de vencidos
+- Ideal para warm-up y demos
 
-[Ir al Ejercicio 1 →](ejercicio-01-incidencias/){: .btn .btn-primary }
+[Ir al Ejercicio 1 →](ejercicio-01-equipamiento/){: .btn .btn-primary }
 
 ---
 
 ### 📋 Ejercicio 2: Registros de Eventos
-**Complejidad:** 🟢 Media-Baja | **Tiempo:** 1-2 horas
+**Complejidad:** 🟡 Media-Baja | **Tiempo:** 35 minutos
 
 Importación de registros desde Excel (Eventbrite) con API de consulta. Incluye:
 - Importación automática desde Excel (34 columnas)
@@ -54,6 +54,19 @@ Importación de registros desde Excel (Eventbrite) con API de consulta. Incluye:
 - Datos reales del Business Central & Agents Winter Fest
 
 [Ir al Ejercicio 2 →](ejercicio-02-eventos/){: .btn .btn-primary }
+
+---
+
+### 🎫 Ejercicio 3: Gestión de Incidencias
+**Complejidad:** 🔴 Media | **Tiempo:** 50 minutos
+
+Sistema completo de tickets con API REST para agentes externos. Incluye:
+- Gestión de ciclo de vida (Nueva → En Progreso → Resuelta → Cerrada)
+- Categorización y priorización
+- Historial de comentarios automático
+- API para integración con chatbots y sistemas externos
+
+[Ir al Ejercicio 3 →](ejercicio-03-incidencias/){: .btn .btn-primary }
 
 </div>
 
@@ -101,17 +114,17 @@ Al finalizar este workshop, dominarás:
 
 <div class="code-example" markdown="1">
 
-Al completar ambos ejercicios habrás creado:
+Al completar los tres ejercicios habrás creado:
 
-| Métrica | Ejercicio 1 | Ejercicio 2 | **Total** |
-|---------|:-----------:|:-----------:|:---------:|
-| **Tablas** | 3 | 2 | **5** |
-| **Enums** | 3 | 0 | **3** |
-| **Pages** | 6 | 5 | **11** |
-| **APIs** | 3 | 2 | **5** |
-| **Codeunits** | 2 | 1 | **3** |
-| **Tests** | ~40 | ~25 | **~65** |
-| **Líneas de código** | ~1,500 | ~800 | **~2,300** |
+| Métrica | Ej. 1 | Ej. 2 | Ej. 3 | **Total** |
+|---------|:-----:|:-----:|:-----:|:---------:|
+| **Tablas** | 2 | 2 | 3 | **7** |
+| **Enums** | 4 | 0 | 3 | **7** |
+| **Pages** | 5 | 5 | 6 | **16** |
+| **APIs** | 0 | 2 | 3 | **5** |
+| **Codeunits** | 1 | 1 | 2 | **4** |
+| **Tests** | ~20 | ~25 | ~40 | **~85** |
+| **Tiempo con IA** | 25 min | 35 min | 50 min | **110 min** |
 
 </div>
 
@@ -185,8 +198,9 @@ Ctrl+Shift+P → "Developer: Reload Window"
 
 | Sección | Descripción | Link |
 |---------|-------------|------|
-| 🎫 **Ejercicio 1** | Sistema de Gestión de Incidencias | [Abrir](ejercicio-01-incidencias/) |
+| 💼 **Ejercicio 1** | Control de Equipamiento IT | [Abrir](ejercicio-01-equipamiento/) |
 | 📋 **Ejercicio 2** | Registros de Eventos con Importación | [Abrir](ejercicio-02-eventos/) |
+| 🎫 **Ejercicio 3** | Sistema de Gestión de Incidencias | [Abrir](ejercicio-03-incidencias/) |
 | 📚 **Recursos** | Material de apoyo y documentación | [Abrir](recursos/) |
 | 📋 **Cheatsheet** | Referencia rápida de comandos ALDC | [Abrir](recursos/cheatsheet-aldc) |
 | 🐛 **Troubleshooting** | Solución de problemas comunes | [Abrir](recursos/troubleshooting) |
@@ -194,12 +208,12 @@ Ctrl+Shift+P → "Developer: Reload Window"
 
 ### Por Tipo de Documento
 
-| Tipo | Ejercicio 1 | Ejercicio 2 |
-|------|-------------|-------------|
-| **PRD Ejecutivo** | [Ver](ejercicio-01-incidencias/PRD-ejecutivo) | [Ver](ejercicio-02-eventos/PRD-ejecutivo) |
-| **PRD Técnico** | [Ver](ejercicio-01-incidencias/PRD-tecnico) | [Ver](ejercicio-02-eventos/PRD-tecnico) |
-| **Guía Paso a Paso** | [Ver](ejercicio-01-incidencias/) | [Ver](ejercicio-02-eventos/) |
-| **Solución** | [Ver](ejercicio-01-incidencias/solucion/) | [Ver](ejercicio-02-eventos/solucion/) |
+| Tipo | Ejercicio 1 | Ejercicio 2 | Ejercicio 3 |
+|------|-------------|-------------|-------------|
+| **PRD Ejecutivo** | [Ver](ejercicio-01-equipamiento/PRD-ejecutivo) | [Ver](ejercicio-02-eventos/PRD-ejecutivo) | [Ver](ejercicio-03-incidencias/PRD-ejecutivo) |
+| **PRD Técnico** | [Ver](ejercicio-01-equipamiento/PRD-tecnico) | [Ver](ejercicio-02-eventos/PRD-tecnico) | [Ver](ejercicio-03-incidencias/PRD-tecnico) |
+| **Guía Paso a Paso** | [Ver](ejercicio-01-equipamiento/) | [Ver](ejercicio-02-eventos/) | [Ver](ejercicio-03-incidencias/) |
+| **Solución** | [Ver](ejercicio-01-equipamiento/solucion/) | [Ver](ejercicio-02-eventos/solucion/) | [Ver](ejercicio-03-incidencias/solucion/) |
 
 </div>
 
@@ -213,18 +227,25 @@ Ctrl+Shift+P → "Developer: Reload Window"
 - Los 7 agentes principales + Sistema Orchestra
 - Demo rápida de al-architect + al-conductor
 
-### Parte 2: Ejercicio 1 - Incidencias (2-3 horas)
+### Parte 2: Ejercicio 1 - Equipamiento (25 min)
 1. Análisis del PRD ejecutivo
 2. Diseño con `al-architect`
 3. Implementación con `al-conductor`
-4. Pruebas de la API
-5. Revisión y Q&A
+4. Pruebas de funcionalidad
+5. Revisión rápida
 
-### Parte 3: Ejercicio 2 - Eventos (1-2 horas)
+### Parte 3: Ejercicio 2 - Eventos (35 min)
 1. Análisis del PRD y datos de ejemplo
 2. Diseño con `al-architect`
 3. Implementación con `al-conductor`
 4. Pruebas de importación y API
+5. Revisión y Q&A
+
+### Parte 4: Ejercicio 3 - Incidencias (50 min)
+1. Análisis del PRD ejecutivo
+2. Diseño con `al-architect`
+3. Implementación con `al-conductor`
+4. Pruebas de la API
 5. Revisión y Q&A
 
 ### Parte 4: Cierre (30 min)
@@ -288,9 +309,9 @@ Ver [LICENSE](LICENSE) para más detalles.
 
 <div style="text-align: center; padding: 2rem 0;">
   <h2>¡Empezamos! 🚀</h2>
-  <a href="ejercicio-01-incidencias/" class="btn btn-primary btn-lg">Comenzar con Ejercicio 1</a>
+  <a href="ejercicio-01-equipamiento/" class="btn btn-primary btn-lg">Comenzar con Ejercicio 1</a>
   <br><br>
-  <small>Tiempo estimado total: 3-5 horas | Nivel: Intermedio</small>
+  <small>Tiempo estimado total: 110 minutos (con IA) | Nivel: Principiante a Intermedio</small>
 </div>
 
 ---

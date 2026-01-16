@@ -23,10 +23,12 @@ kramdown:
 navigation:
   - title: Inicio
     url: /
-  - title: Ejercicio 1 - Incidencias
-    url: /ejercicio-01-incidencias/
+  - title: Ejercicio 1 - Equipamiento
+    url: /ejercicio-01-equipamiento/
   - title: Ejercicio 2 - Eventos
     url: /ejercicio-02-eventos/
+  - title: Ejercicio 3 - Incidencias
+    url: /ejercicio-03-incidencias/
   - title: Recursos
     url: /recursos/
   - title: Cheatsheet ALDC
@@ -46,7 +48,7 @@ defaults:
     values:
       layout: "default"
   - scope:
-      path: "ejercicio-01-incidencias"
+      path: "ejercicio-01-equipamiento"
     values:
       layout: "default"
       ejercicio: "1"
@@ -55,6 +57,11 @@ defaults:
     values:
       layout: "default"
       ejercicio: "2"
+  - scope:
+      path: "ejercicio-03-incidencias"
+    values:
+      layout: "default"
+      ejercicio: "3"
 
 # Plugins
 plugins:
