@@ -99,11 +99,14 @@ CONSIDERACIONES TÉCNICAS:
 ### 1.3 Espera la respuesta de al-architect
 
 **Deberías recibir:**
+- � Documento `architecture.md` en `.github/plans/` (decisiones arquitectónicas)
 - 📐 Modelo de datos (2 tablas)
 - 🔄 Lógica de importación Excel
 - 📄 Diseño de UI (pages)
 - 🌐 Especificación de APIs (read-only)
 - 🧪 Plan de testing
+
+> 💡 **Nota**: al-architect crea `architecture.md` que al-conductor leerá automáticamente antes de implementar
 
 ### 1.4 ✅ Checkpoint de Diseño
 
@@ -145,16 +148,16 @@ NOTA IMPORTANTE sobre la importación Excel:
 
 ### 2.2 Proceso Automático
 
-al-conductor orquestará automáticamente:
+al-conductor orquestará automáticamente los **3 subagents especializados**:
 
 ```
-📊 PLANNING PHASE
+📊 PLANNING PHASE (al-planning-subagent)
    └── Analiza proyecto, identifica 6 fases
 
 🔴 FASE 1: Tabla Event (Maestro)
-   ├── RED: Test CRUD eventos
+   ├── RED (al-implement-subagent): Test CRUD eventos
    ├── GREEN: Implementar tabla
-   └── REFACTOR: Índice por External Event ID
+   └── REFACTOR (al-review-subagent): Índice por External Event ID
 
 🔴 FASE 2: Tabla Event Registration
    ├── RED: Test campos (30+)
@@ -390,6 +393,13 @@ src/
 - [PRD Técnico Completo](./PRD-tecnico.md)
 - [Datos de Ejemplo](./datos-ejemplo/)
 - [Volver al Workshop Principal](../README.md)
+
+### Documentación Generada Automáticamente
+
+Después de completar el ejercicio, encontrarás en `.github/plans/`:
+- `architecture.md` - Decisiones arquitectónicas de al-architect
+- `plan-event-registration.md` - Plan multi-fase de al-conductor
+- `memory.md` - Historial de decisiones (si usaste al-memory.create)
 
 ---
 

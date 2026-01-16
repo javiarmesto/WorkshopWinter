@@ -3,8 +3,11 @@
 > **Aprende a construir extensiones de Business Central usando GitHub Copilot y AL Development Collection**
 
 [![BC Version](https://img.shields.io/badge/Business%20Central-v24+-blue)](https://docs.microsoft.com/dynamics365/business-central/)
-[![AL Development Collection](https://img.shields.io/badge/ALDC-v2.8+-green)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)
+[![AL Development Collection](https://img.shields.io/badge/ALDC-v2.9+-green)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> [!TIP]
+> 🌐 **Sitio web del workshop**: [https://javiarmesto.github.io/WorkshopWinter](https://javiarmesto.github.io/WorkshopWinter)
 
 ---
 

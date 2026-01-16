@@ -77,11 +77,14 @@ CONSIDERACIONES TÉCNICAS:
 ### 1.3 Espera la respuesta de al-architect
 
 **Deberías recibir:**
+- � Documento `architecture.md` en `.github/plans/` (decisiones arquitectónicas)
 - 📐 Modelo de datos completo (3 tablas + 1 extensión)
 - 🔗 Puntos de integración
 - 📄 Diseño de UI (pages)
 - 🌐 Especificación de APIs
 - 🧪 Plan de testing
+
+> 💡 **Nota**: al-architect crea `architecture.md` que al-conductor leerá automáticamente antes de implementar
 
 ### 1.4 ✅ Checkpoint de Diseño
 
@@ -120,16 +123,16 @@ Requisitos de implementación:
 
 ### 2.2 Proceso Automático
 
-al-conductor orquestará automáticamente:
+al-conductor orquestará automáticamente los **3 subagents especializados**:
 
 ```
-📊 PLANNING PHASE
+📊 PLANNING PHASE (al-planning-subagent)
    └── Analiza proyecto, identifica 8 fases
 
 🔴 FASE 1: Enums (Status, Priority, Comment Type)
-   ├── RED: Test de valores enum
+   ├── RED (al-implement-subagent): Test de valores enum
    ├── GREEN: Implementar enums
-   └── REFACTOR: Review y documentación
+   └── REFACTOR (al-review-subagent): Review y documentación
 
 🔴 FASE 2: Tabla Incident Category
    ├── RED: Test CRUD categorías
@@ -354,6 +357,13 @@ Continúa la implementación desde la fase [X]
 - [PRD Técnico Completo](./PRD-tecnico.md)
 - [Ejemplos de API](./ejemplos-api.md)
 - [Volver al Workshop Principal](../README.md)
+
+### Documentación Generada Automáticamente
+
+Después de completar el ejercicio, encontrarás en `.github/plans/`:
+- `architecture.md` - Decisiones arquitectónicas de al-architect
+- `plan-incident-management.md` - Plan multi-fase de al-conductor
+- `memory.md` - Historial de decisiones (si usaste al-memory.create)
 
 ---
 

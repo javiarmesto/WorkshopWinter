@@ -1,0 +1,100 @@
+# GitHub Pages Configuration
+title: "Workshop: Desarrollo AL con IA para Business Central"
+description: "Aprende a construir extensiones de Business Central usando GitHub Copilot y AL Development Collection"
+author: VS Sistemas
+email: contacto@vssistemas.com
+baseurl: "/WorkshopWinter"
+url: "https://javiarmesto.github.io"
+
+# Theme
+theme: jekyll-theme-cayman
+# Or use remote theme for more options:
+# remote_theme: pmarsceill/just-the-docs
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+# Navigation
+navigation:
+  - title: Inicio
+    url: /
+  - title: Ejercicio 1 - Incidencias
+    url: /ejercicio-01-incidencias/
+  - title: Ejercicio 2 - Eventos
+    url: /ejercicio-02-eventos/
+  - title: Recursos
+    url: /recursos/
+  - title: Cheatsheet ALDC
+    url: /recursos/cheatsheet-aldc
+
+# Collections
+collections:
+  ejercicios:
+    output: true
+    permalink: /:collection/:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "ejercicio-01-incidencias"
+    values:
+      layout: "default"
+      ejercicio: "1"
+  - scope:
+      path: "ejercicio-02-eventos"
+    values:
+      layout: "default"
+      ejercicio: "2"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-relative-links
+
+# Exclude from processing
+exclude:
+  - .git
+  - .gitignore
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+
+# Include in processing
+include:
+  - _pages
+  - _layouts
+
+# SEO and Social
+twitter:
+  username: vssistemas
+  card: summary_large_image
+
+social:
+  name: VS Sistemas
+  links:
+    - https://github.com/javiarmesto/WorkshopWinter
+
+# Logo and image
+logo: /assets/images/logo.png
+image: /assets/images/workshop-banner.png
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# Favicon
+# favicon: /assets/images/favicon.ico

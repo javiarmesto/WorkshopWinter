@@ -6,23 +6,34 @@
 
 ## 🎭 Modos Principales (Agents)
 
+### Agentes Principales (7 agents)
+
 | Modo | Uso | Cuándo Usarlo |
 |------|-----|---------------|
 | `Use al-architect mode` | Diseño de arquitectura | Al iniciar una nueva funcionalidad |
-| `Use al-conductor mode` | Implementación TDD | Después del diseño, para codificar |
+| `Use al-conductor mode` | Orquestación TDD multi-agente | Implementación con quality gates |
 | `Use al-developer mode` | Desarrollo directo | Cambios simples (1-2 objetos) |
 | `Use al-api mode` | Diseño de APIs | Cuando necesitas APIs REST/OData |
 | `Use al-debugger mode` | Diagnóstico profundo | Cuando hay bugs complejos |
 | `Use al-tester mode` | Estrategia de testing | Para planificar tests |
 | `Use al-copilot mode` | Features de Copilot | Para AI capabilities en BC |
 
+### Sistema Orchestra (4 agents)
+
+**al-conductor** usa automáticamente estos subagents:
+- **al-planning-subagent** - Investigación y análisis de contexto AL
+- **al-implement-subagent** - Implementación TDD (RED → GREEN → REFACTOR)
+- **al-review-subagent** - Revisión de código contra best practices
+
+> 💡 **Nota**: Los subagents NO se invocan manualmente, al-conductor los orquesta automáticamente
+
 ---
 
-## ⚡ Comandos de Workspace
+## ⚡ Comandos de Workspace (18 Workflows)
 
 ### Setup y Build
 ```bash
-@workspace use al-initialize    # Inicializa proyecto AL
+@workspace use al-initialize    # Inicializa proyecto AL completo
 @workspace use al-build         # Compila y despliega
 @workspace use al-permissions   # Genera permission sets
 ```
@@ -36,17 +47,56 @@
 
 ### Análisis y Debug
 ```bash
-@workspace use al-diagnose      # Diagnóstico completo
-@workspace use al-performance   # Análisis de rendimiento
-@workspace use al-migrate       # Ayuda en migraciones
+@workspace use al-diagnose      # Diagnóstico completo (consolidado)
+@workspace use al-performance   # Análisis profundo con CPU profiling
+@workspace use al-performance.triage  # Diagnóstico rápido de performance
+@workspace use al-migrate       # Ayuda en migraciones BC
+```
+
+### Documentación y Gestión
+```bash
+@workspace use al-spec.create   # Crea especificaciones funcionales/técnicas
+@workspace use al-context.create  # Genera context.md para AI
+@workspace use al-memory.create  # Genera/actualiza memory.md
+@workspace use al-pr-prepare    # Prepara pull request
+@workspace use al-translate     # Gestiona archivos XLF
 ```
 
 ### Copilot Features
 ```bash
-@workspace use al-copilot-capability     # Crea capability
+@workspace use al-copilot-capability     # Crea capability completa
 @workspace use al-copilot-promptdialog   # Crea prompt dialog
-@workspace use al-copilot-test           # Tests de Copilot
+@workspace use al-copilot-test           # Tests con AI Test Toolkit
+@workspace use al-copilot-generate       # Genera código Copilot
 ```
+
+---
+
+## 📋 Sistema de Context & Memory
+
+**Ubicación**: `.github/plans/`
+
+### Documentos de Contexto
+
+| Documento | Propósito | Creado Por |
+|-----------|-----------|------------|
+| `architecture.md` | Decisiones arquitectónicas | al-architect |
+| `spec.md` | Especificaciones funcionales/técnicas | al-spec.create |
+| `test-plan.md` | Estrategia de testing | al-tester |
+| `memory.md` | Historial de decisiones | al-memory.create |
+| `<feature>-api-design.md` | Diseño de APIs | al-api |
+| `<feature>-copilot-ux-design.md` | Diseño UX Copilot | al-copilot |
+
+### ¿Cómo Funciona?
+
+1. **al-architect** crea `architecture.md` con decisiones de diseño
+2. **al-conductor** lee estos docs antes de empezar implementación
+3. **Subagents** (planning, implement, review) usan el contexto para:
+   - Investigar consistentemente
+   - Implementar alineado con arquitectura
+   - Validar contra especificaciones
+
+> 💡 **Best Practice**: Siempre crea architecture.md y spec.md antes de usar al-conductor para features medias/complejas
 
 ---
 
@@ -127,18 +177,28 @@ Contexto:
 
 ---
 
-## 🔧 Auto-Guidelines (Automáticas)
+## 🔧 Auto-Guidelines (9 Instructions)
 
-Estas reglas se aplican automáticamente mientras codificas:
+Estas reglas se aplican automáticamente mediante `applyTo` patterns:
+
+### Siempre Activas (`**/*.al`)
 
 | Guideline | Qué Hace |
 |-----------|----------|
-| `al-code-style` | Formato y estructura de código |
-| `al-naming-conventions` | Nombres PascalCase, prefijos |
-| `al-performance` | SetLoadFields, filtrado temprano |
-| `al-error-handling` | TryFunctions, error labels |
-| `al-events` | Patrón event-driven |
-| `al-testing` | Estructura de tests AL-Go |
+| `al-guidelines` | Hub master referenciando todos los patterns |
+| `al-code-style` | Formato y estructura feature-based |
+| `al-naming-conventions` | PascalCase, prefijos, límite 26 chars |
+| `al-performance` | SetLoadFields, filtrado temprano, temporary tables |
+| `al-error-handling` | TryFunctions, error labels, telemetría |
+| `al-events` | Event subscribers, integration events |
+
+### Activadas por Contexto
+
+| Guideline | ApplyTo | Qué Hace |
+|-----------|---------|----------|
+| `al-testing` | `**/test/**/*.al` | Estructura AL-Go, test generation |
+| `copilot-instructions` | (auto-loaded) | Coordinación master de primitives |
+| `index` | (reference) | Catálogo completo de instructions |
 
 ---
 
@@ -205,4 +265,4 @@ npm run validate
 
 ---
 
-*Versión: 2.8.0 | Última actualización: Enero 2025*
+*Versión: 2.9.0 | Última actualización: Enero 2025*
